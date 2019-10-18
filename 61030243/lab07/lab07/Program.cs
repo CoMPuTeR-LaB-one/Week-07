@@ -10,12 +10,11 @@ namespace lab07
     {
         static void Main(string[] args)
         {
-            Student su = new Student();
+            Student su = new Student("Student Name", "12345678");
             try
             {
-                su.Name = "Student Name";
-                su.ID = "12345678";
-                su.GPA = 3.5f;
+                // su.Name = "My name";
+                su.GPA = 5.0f;
                 Console.WriteLine("Student name : " + su.Name);
                 Console.WriteLine("Student ID   : " + su.ID);
                 Console.WriteLine("Student GPA  : " + su.GPA);
@@ -29,18 +28,23 @@ namespace lab07
     }
     class Student
     {
-        private string name;
-        private string id;
+        private string name = null;
+        private string id = null;
         private float gpa;
+
+        public Student(string Name, string ID)
+        {
+            this.name = Name;   // assign auto variable to the field
+            this.id = ID;
+        }
+
         public string Name
         {
             get { return name; }
-            set { name = value; }
         }
         public string ID
         {
             get { return id; }
-            set { id = value; }
         }
         public float GPA
         {
@@ -58,5 +62,6 @@ namespace lab07
         }
     }
 }
+
     
 
